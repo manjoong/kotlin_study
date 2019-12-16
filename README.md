@@ -17,3 +17,16 @@ A/libc: Fatal signal 6 (SIGABRT), code -6 (SI_TKILL) in tid 1924 (a.myapplicatio
 12-15 22:11:51.157 1924-1924/com.drj.a.myapplication V/StudioProfiler: StudioProfilers agent attached.
 12-15 22:11:51.183 1924-2011/com.drj.a.myapplication V/StudioProfiler: Acquiring Application for Events
 12-15 22:11:51.244 1924-1924/com.drj.a.myapplication A/libc: Fatal signal 6 (SIGABRT), code -6 (SI_TKILL) in tid 1924 (a.myapplication), pid 1924 (a.myapplication)
+
+
+
+
+A: 해결됬다. ide를 껐다키니 정상 작동.
+추측하기로는 
+'''
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+'''
+
+이 함수의 TODO에 주석을 걸었는데 그게 지원하지 않는 형식인 것 같다.

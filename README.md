@@ -24,10 +24,10 @@ A/libc: Fatal signal 6 (SIGABRT), code -6 (SI_TKILL) in tid 1924 (a.myapplicatio
 A: 해결됬다. ide를 껐다키니 정상 작동.
 추측하기로는 
 
-'''c
+```
 override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
     TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
 }
-'''
+```
 
 이 함수의 TODO에 주석을 걸었는데 그게 지원하지 않는 형식인 것 같다.

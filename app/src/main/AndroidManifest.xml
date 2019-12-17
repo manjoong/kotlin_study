@@ -22,6 +22,9 @@
 
         <activity android:name=".WebActivity"
             android:windowSoftInputMode="adjustNothing">
+        </activity>
+
+        <activity android:name=".SensorActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,8 +32,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SensorActivity">
-        </activity>
 
     </application>
 

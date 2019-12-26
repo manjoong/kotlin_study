@@ -1,4 +1,21 @@
 # kotlin_study
+## 학습 정보
+### 교재
+[오준서의 안드로이드 생존코딩(코틀린편)] (http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791162241196&orderClick=LAG&Kc=)
+
+### 목차
+1. 비만도 계산기
+2. 스톱워치
+3. 나만의 웹 브라우저
+4. 수평 측정기
+5. 전자액자  <--현재
+6. 지도와 GPS
+7. 손전등
+8. 실로폰
+9. TODO list
+
+
+## 오류- Fatal signal 6 (SIGABRT)
 
 자꾸 
 A/libc: Fatal signal 6 (SIGABRT), code -6 (SI_TKILL) in tid 1924 (a.myapplication), pid 1924 (a.myapplication)

@@ -1,7 +1,7 @@
 # kotlin_study
 ## 학습 정보
 ### 교재
-[오준서의 안드로이드 생존코딩(코틀린편)] (http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791162241196&orderClick=LAG&Kc=)
+[오준석의 안드로이드 생존코딩(코틀린편)] (http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791162241196&orderClick=LAG&Kc=)
 
 ### 목차
 1. 비만도 계산기

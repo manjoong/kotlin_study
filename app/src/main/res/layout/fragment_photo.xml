@@ -6,14 +6,10 @@
     tools:context="com.drj.a.myapplication.PhotoFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/hello_blank_fragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
 
 </android.support.constraint.ConstraintLayout>

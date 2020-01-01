@@ -21,7 +21,7 @@ if [  "$?" = "0" ]; then
     echo ""
     echo ""
     
-    message="auto test"
+    message="auto test2"
     #if [ $1 = '' ]; then
     #    message="auto commit and push"
     #fi 

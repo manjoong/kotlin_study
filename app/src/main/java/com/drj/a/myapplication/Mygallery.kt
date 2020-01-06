@@ -16,6 +16,7 @@ import org.jetbrains.anko.support.v4.viewPager
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.yesButton
 import java.util.jar.Manifest
+import kotlin.concurrent.timer
 
 /**
  * Created by a on 2019. 12. 18..
@@ -85,6 +86,16 @@ class Mygallery : AppCompatActivity() {
         val adapter = MyPagerAdapter(supportFragmentManager)
         adapter.updateFragments(fragments)
         viewPager.adapter = adapter
+
+        timer(period = 3000){
+            runOnUiThread {
+                if (viewPager.currentItem < adapter.count -1 ){
+                    viewPager.currentItem = viewPager.currentItem + 1
+                } else {
+                    viewPager.currentItem = 0
+                }
+            }
+        }
 
         }
     }

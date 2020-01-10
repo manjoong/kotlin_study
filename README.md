@@ -48,9 +48,9 @@ override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
 ### sdk version 28 업그레이드 오류
 compileSdkVersion 28, targetSdkVersion 28 를 28로 올렸고,
 그에 해당하는 컴포넌트들 
-    - implementation 'com.android.support:appcompat-v7:28.0.0'
-    - implementation 'com.android.support:support-v4:28.0.0'
-    - implementation 'com.android.support:design:28.0.0'
+1. implementation 'com.android.support:appcompat-v7:28.0.0'
+2. implementation 'com.android.support:support-v4:28.0.0'
+3. implementation 'com.android.support:design:28.0.0'
 을 같이 올렸다.
 
 에러 로그는 다음과 같다.

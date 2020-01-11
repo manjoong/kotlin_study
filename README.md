@@ -67,6 +67,15 @@ android.enableJetifier=true
 ```
 을 추가하라고 하여 추가했지만 여전히 같다. 
 
+A. 해당 문제의 원인은 "com.google.android.gms:play-services-maps" 에 있었다.
+해단 implementation의 버전을 17.0.0으로 했는데 해단 버전을 사용하려면 androidx 의존성을 추가 해야한다.
+
+*해결 방법: 15.0.1버전으로 다운 *
+
+[관련 stack overflow 링크](https://stackoverflow.com/questions/56673212/getting-error-manifest-merger-failed-after-creation-of-google-maps-activity-pro)
+
+
+
 
 
 

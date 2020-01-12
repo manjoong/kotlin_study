@@ -30,13 +30,8 @@
             android:name=".WebActivity"
             android:windowSoftInputMode="adjustNothing"></activity>
         <activity android:name=".SensorActivity"></activity>
-        <activity android:name=".Mygallery">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Mygallery"></activity>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -52,7 +47,13 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

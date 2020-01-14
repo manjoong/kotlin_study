@@ -21,7 +21,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var locationRequest: LocationRequest
     private lateinit var locationCallback: MyLocationCallBack
 
-    private lateinit var mMap: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +44,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun locationInit() {
         fusedLoctionProviderClient = FusedLocationProviderClient(this)
+
+        locationCallback = MyLocationCallBack()
+
+        locationRequest = LocationRequest()
+
+        locationRequest.priority = LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY
+
+        locationRequest.interval = 10000
+
+        locationRequest.fastestInterval = 5000
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -54,5 +63,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val sydney = LatLng(-34.0, 151.0)
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+    }
+
+    override fun onResume() {
+        super.onResume()
+        addLocation
     }
 }

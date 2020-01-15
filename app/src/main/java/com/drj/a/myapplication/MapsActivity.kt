@@ -67,6 +67,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onResume() {
         super.onResume()
-        addLocation
+        addLocationListener()
+    }
+    private fun addLocationListener(){
+        fusedLoctionProviderClient.requestLocationUpdates(locationRequest,
+                locationCallback,
+                null)
     }
 }

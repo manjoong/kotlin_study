@@ -2,10 +2,7 @@ package com.drj.a.myapplication
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationListener
-import com.google.android.gms.location.LocationRequest
+import com.google.android.gms.location.*
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -27,8 +24,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(R.layout.activity_maps)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
-                .findFragmentById(R.id.                                                                            map) as SupportMapFragment
+                .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        locationInit()
     }
 
     /**
@@ -73,5 +72,18 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         fusedLoctionProviderClient.requestLocationUpdates(locationRequest,
                 locationCallback,
                 null)
+    }
+
+    inner class MyLocationCallBack : LocationCallback(){
+        override fun onLocationResult(locationResult : LocationResult?) {
+            super.onLocationResult(locationResult)
+
+            val location = locationResult?.lastLocation
+
+            location?.run {
+                val latLng = LatLng(latitude, longitude)
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f))
+            }
+        }
     }
 }

@@ -17,6 +17,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var fusedLoctionProviderClient: FusedLocationProviderClient
     private lateinit var locationRequest: LocationRequest
     private lateinit var locationCallback: MyLocationCallBack
+    private val REQUEST_ACCESS_FINE_LOCATION = 1000
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

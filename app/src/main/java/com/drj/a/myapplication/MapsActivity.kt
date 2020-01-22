@@ -1,7 +1,11 @@
 package com.drj.a.myapplication
 
+import android.app.Activity
+import android.content.pm.PackageManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import com.google.android.gms.location.*
 
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -10,6 +14,10 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import org.jetbrains.anko.alert
+import org.jetbrains.anko.noButton
+import org.jetbrains.anko.yesButton
+import java.util.jar.Manifest
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -18,6 +26,32 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var locationRequest: LocationRequest
     private lateinit var locationCallback: MyLocationCallBack
     private val REQUEST_ACCESS_FINE_LOCATION = 1000
+
+    private fun permissionCheck(cancel: () -> Unit, ok: () -> Unit ){
+        if (ContextCompat.checkSelfPermission(this,
+                        android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.ACCESS_FINE_LOCATION)){
+                cancel()
+            }else {
+                ActivityCompat.requestPermissions(this,
+                        arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
+                        REQUEST_ACCESS_FINE_LOCATION)
+            }
+        }else{
+            ok()
+        }
+    }
+
+    private  fun showPermissionInfoDialog(){
+        alert("현재 위치 정보를 얻으려면 위치 권한이 필합니다"){
+            yesButton {
+                ActivityCompat.requestPermissions(this@MapsActivity,
+                        arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
+                        REQUEST_ACCESS_FINE_LOCATION)
+            }
+            noButton {  }
+        }.show()
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
